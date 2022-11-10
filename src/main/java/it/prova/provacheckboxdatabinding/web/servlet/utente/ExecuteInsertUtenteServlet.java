@@ -45,7 +45,8 @@ public class ExecuteInsertUtenteServlet extends HttpServlet {
 		}
 		// se sono qui è tutto ok ma quando si inserisce bisogna ricordarsi che
 		// dall'array di stringhe
-		// bisogna convertire in long qui trucchiamo le cose per far funzionare lo show
+		// bisogna convertire in long qui trucchiamo le cose per far funzionare lo show.
+		// NOTA!!! Questa logica di 'deserializzazione' del dato andrebbe nei Service!!!
 		for (String stringItem : ruoliSelezionati!=null?ruoliSelezionati:new String[] {}) {
 			utenteInstance.getRuoli().add(MockDB.get(Long.valueOf(stringItem)));
 		}
